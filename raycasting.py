@@ -62,3 +62,4 @@ class RayCasting:
 			ray_angle += DELTA_ANGLE
 
 	def update(self):
+		self.ray_cast()
