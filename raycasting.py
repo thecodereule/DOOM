@@ -30,7 +30,7 @@ class RayCasting:
 					break
 				x_hor += dx
 				y_hor += dy
-				depth_hor += delta_depth 
+				depth_hor += delta_depth
 
 			# verticals
 			x_vert, dx = (x_map + 1, 1) if cos_a > 0 else (x_map - 1e-6, -1)
@@ -55,9 +55,11 @@ class RayCasting:
 			else:
 				depth = depth_hor
 
-			# draw for debug
-			pg.draw.line(self.game.screen, 'yellow', (100 * ox, 100 * oy),
-				(100 * ox + 100 * depth * cos_a, 100 * oy + 100 * depth * sin_a), 2)
+			# projection
+			proj_height = SCREEN_DIST / (depth + 0.0001)
+
+			# draw walls
+			pg.draw.rect(self.game.screen, "white", (ray * SCALE, HALF_HEIGHT - proj_height // 2, SCALE, proj_height))
 
 			ray_angle += DELTA_ANGLE
 
