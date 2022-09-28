@@ -30,6 +30,7 @@ class Game:
 
 	def draw(self):
 		self.screen.fill('black')
+		self.object_renderer.draw()
 		#self.map.draw()
 		#self.player.draw()
 
@@ -50,4 +51,4 @@ if __name__ == '__main__':
 	game.run()
 
 
-# stopped at minute 16:00
+# stopped at minute 23:37
