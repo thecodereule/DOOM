@@ -4,7 +4,7 @@ from settings import *
 from map import *
 from player import *
 from raycasting import *
-from object_render import *
+from object_renderer import *
 from sprite_object import *
 from object_handler import *
 from weapon import * 
@@ -53,6 +53,7 @@ class Game:
 			if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
 				pg.quit()
 				sys.exit()
+			self.player.single_fire_event(event)
 
 	def run(self):
 		while True:
