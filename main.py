@@ -9,6 +9,7 @@ from sprite_object import *
 from object_handler import *
 from weapon import *
 from sound import *
+form pathfinding import *
 
 
 class Game:
@@ -33,6 +34,7 @@ class Game:
 		self.object_handler = ObjectHandler(self)
 		self.weapon = Weapon(self)
 		self.sound = Sound(self)
+		self.paths = pathfinding(self)
 
 	def update(self):
 		self.player.update()
@@ -74,4 +76,4 @@ if __name__ == '__main__':
 
 
 
-# vrijeme 35:00
+# vrijeme 43:47
