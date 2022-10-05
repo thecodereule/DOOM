@@ -76,4 +76,4 @@ if __name__ == '__main__':
 
 
 
-# vrijeme 43:47
+# vrijeme 50:20
