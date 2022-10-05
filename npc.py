@@ -1,6 +1,6 @@
 from sprite_object import *
 from random import randint, random, choice
-from pathfinding import *
+
 
 class NPC(AnimatedSprite):
     def __init__(self, game, path='resources/sprites/npc/soldier/0.png', pos=(10.5, 5.5), scale=0.6, shift=0.38, animation_time=180):
@@ -40,7 +40,7 @@ class NPC(AnimatedSprite):
 
 
     def movement(self):
-        next_pos = self.game.pathfinding.get_path(self.map_pos, self.game.map_pos)
+        next_pos = self.game.pathfinding.get_path(self.map_pos, self.game.player.map_pos)
         next_x, next_y = next_pos
 
         #pg.draw.rect(self.game.screen, 'blue', (100 * next_x, 100 * next_y, 100, 100))
